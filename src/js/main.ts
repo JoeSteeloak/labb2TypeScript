@@ -45,7 +45,7 @@ function renderTodoList(): void {
                 li.classList.add("completed");
             }
 
-            const deleteSpan = document.createElement('span');
+            const deleteSpan = document.createElement('button');
             deleteSpan.textContent = 'Complete';
             deleteSpan.className = 'complete-button';
             deleteSpan.addEventListener('click', () => completeTodo(index));
