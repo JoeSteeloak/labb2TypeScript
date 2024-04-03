@@ -29,7 +29,7 @@ function addTodo(): void {
 };
 
 function renderTodoList(): void {
-    console.log(todoList); // ???
+    console.log(todoList); // visar todoList i konsolen
     const todos = todoList.getTodos(); //hämtar arrayen med todos från Todo.ts
     console.log("Antal todos: " + todos.length);
     const todolistEl = document.getElementById('todo-list') as HTMLUListElement;
@@ -61,4 +61,3 @@ function completeTodo(index: number): void {
     renderTodoList();
 }
 
-renderTodoList();

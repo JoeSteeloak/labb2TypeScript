@@ -28,7 +28,12 @@ export class ToDoList implements iTodo {
 
     /* metod för att markera todos som klara */
     public markTodoCompleted(todoIndex: number): void {
-        this.todos[todoIndex].completed = true;
+        if (this.todos[todoIndex].completed === true) {
+            this.todos[todoIndex].completed = false;
+        } else {
+            this.todos[todoIndex].completed = true;
+        }
+
         this.saveToLocalStorage(this.todos);
     }
 
