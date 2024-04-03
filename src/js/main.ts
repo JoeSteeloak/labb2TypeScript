@@ -3,6 +3,8 @@ import { ToDoList } from "./Todo";
 const todoList = new ToDoList();
 
 document.addEventListener('DOMContentLoaded', () => {
+    todoList.loadFromLocalStorage(); // Ladda todos från LocalStorage när sidan laddas
+    renderTodoList(); // Rendera todo-listan med de laddade todosen
     const form = document.getElementById('form')! as HTMLFormElement;
     form.addEventListener('submit', (event) => {
         event.preventDefault(); //stoppa den vanliga användningen av submit
@@ -28,7 +30,7 @@ function addTodo(): void {
 
 function renderTodoList(): void {
     console.log(todoList); // ???
-    const todos = todoList.getTodos(); //hämtar arrayen med todos rån Todo.ts
+    const todos = todoList.getTodos(); //hämtar arrayen med todos från Todo.ts
     console.log("Antal todos: " + todos.length);
     const todolistEl = document.getElementById('todo-list') as HTMLUListElement;
 
@@ -38,6 +40,10 @@ function renderTodoList(): void {
             const li = document.createElement('li');
             li.innerHTML = `
             <strong>${todo.task}</strong> priority: ${todo.priority}`;
+
+            if (todo.completed === true) {
+                li.classList.add("completed");
+            }
 
             const deleteSpan = document.createElement('span');
             deleteSpan.textContent = 'Complete';
