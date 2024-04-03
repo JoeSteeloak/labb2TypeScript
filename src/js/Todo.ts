@@ -2,11 +2,11 @@ import { iTodo } from "./iTodo";
 
 export class ToDoList implements iTodo {
 
-    task: string;
-    completed: boolean;
-    priority: number; //1, 2, eller 3
+    task?: string;
+    completed?: boolean;
+    priority?: number; //1, 2, eller 3
 
-    constructor(task: string, priority: number) {
+    constructor(task?: string, priority?: number) {
         this.task = task;
         this.completed = false;
         this.priority = priority;
