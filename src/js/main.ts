@@ -29,8 +29,9 @@ function addTodo(): void {
 };
 
 function renderTodoList(): void {
-    console.log(todoList); // visar todoList i konsolen
+    
     const todos = todoList.getTodos(); //hämtar arrayen med todos från Todo.ts
+    console.log(todos); // visar todoList i konsolen
     console.log("Antal todos: " + todos.length);
     const todolistEl = document.getElementById('todo-list') as HTMLUListElement;
 
@@ -38,15 +39,16 @@ function renderTodoList(): void {
         todolistEl.innerHTML = ''; //rensa listan
         todos.forEach((todo, index) => {
             const li = document.createElement('li');
-            li.innerHTML = `
-            <strong>${todo.task}</strong> priority: ${todo.priority}`;
+            li.innerHTML = `${todo.task}`;
+            li.classList.add(`prio${todo.priority}`);
+
 
             if (todo.completed === true) {
                 li.classList.add("completed");
             }
 
-            const deleteSpan = document.createElement('button');
-            deleteSpan.textContent = 'Complete';
+            const deleteSpan = document.createElement('span');
+            deleteSpan.innerHTML = `<i class="fa-solid fa-check"></i>`;
             deleteSpan.className = 'complete-button';
             deleteSpan.addEventListener('click', () => completeTodo(index));
             li.appendChild(deleteSpan);

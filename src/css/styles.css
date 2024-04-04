@@ -1,3 +1,62 @@
+* {
+
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.05em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
 .completed {
-    text-decoration: line-through;
+    text-decoration: line-through red wavy 5px;
+
+}
+
+body {
+    background-color: #c2f7ec;
+}
+
+#container {
+    background-image: url('../images/notepadbg.jpg');
+    margin: 0 auto;
+    width: 800px;
+    max-width: 90%;
+    min-height: 600px;
+    background-size: cover;
+    box-shadow: 10px 10px 20px;
+    text-align: center;
+    
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 1em;
+
+}
+
+.complete-button {
+    margin-left: 2em;
+}
+
+i:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Priostyling */
+
+.prio1 {
+font-size: 1.5em;
+text-transform: uppercase;
+}
+
+.prio2 {
+    font-size: 1.25em;
+}
+
+.prio3 {
+    color: #646464;  
 }
